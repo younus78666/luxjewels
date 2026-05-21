@@ -1,0 +1,572 @@
+<!-- ============================================================
+     LUX JEWELS — TORONTO ENGAGEMENT RINGS PAGE
+     Elementor HTML block. Paste into a single HTML widget.
+     All CSS scoped under .lux-tor so it can't bleed into theme.
+     Schema, meta, canonical, OG = handled by RankMath / WP.
+     ============================================================ -->
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+  .lux-tor *{box-sizing:border-box;margin:0;padding:0}
+  .lux-tor{
+    --lt-dark:#202020;--lt-warm:#bcaf9f;--lt-cream:#e6e2de;--lt-red:#601c2b;--lt-cream2:#f5f3f0;
+    --lt-text:#1a1a1a;--lt-text2:#2a2a2a;
+    --lt-serif:'Playfair Display',Georgia,serif;--lt-sans:'Lato','Helvetica Neue',Arial,sans-serif;
+    font-family:var(--lt-sans);font-weight:400;color:var(--lt-text);background:#fff;font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased
+  }
+  .lux-tor h1,.lux-tor h2,.lux-tor h3,.lux-tor h4{font-family:var(--lt-serif);font-weight:400;line-height:1.25;color:var(--lt-dark)}
+  .lux-tor p{margin-bottom:1em;color:var(--lt-text);font-weight:400}
+  .lux-tor a{color:var(--lt-red);text-decoration:none}
+  .lux-tor a:hover{text-decoration:underline}
+  .lux-tor strong{font-weight:700;color:var(--lt-dark)}
+  .lux-tor ul,.lux-tor ol{padding-left:0;list-style:none}
+  .lux-tor .lt-wrap{max-width:1080px;margin:0 auto;padding:0 36px}
+  .lux-tor .lt-wrap-n{max-width:920px;margin:0 auto;padding:0 36px}
+
+  .lux-tor .lt-topbar{background:var(--lt-dark);color:rgba(255,255,255,0.78);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;text-align:center;padding:9px 16px;border-bottom:1px solid rgba(188,175,159,0.15)}
+  .lux-tor .lt-topbar span{color:var(--lt-warm);margin:0 6px}
+
+  .lux-tor .lt-hero{background:var(--lt-dark);padding:90px 0 80px;text-align:center;position:relative;overflow:hidden}
+  .lux-tor .lt-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top,rgba(188,175,159,0.12),transparent 60%);pointer-events:none}
+  .lux-tor .lt-hero-inner{position:relative;z-index:1}
+  .lux-tor .lt-eyebrow{font-weight:700;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--lt-warm);margin-bottom:22px}
+  .lux-tor .lt-hero h1{font-family:var(--lt-serif);color:#fff;font-size:clamp(30px,4.8vw,54px);max-width:820px;margin:0 auto 22px;line-height:1.15}
+  .lux-tor .lt-hero h1 em{color:var(--lt-warm);font-style:italic;font-weight:400}
+  .lux-tor .lt-hero-sub{color:rgba(255,255,255,0.85);font-size:18px;max-width:620px;margin:0 auto 38px;line-height:1.75}
+  .lux-tor .lt-btn{display:inline-block;background:var(--lt-red);color:#fff !important;font-family:var(--lt-sans);font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:18px 42px;text-decoration:none !important;border:none;cursor:pointer;transition:background .2s,transform .15s,box-shadow .2s}
+  .lux-tor .lt-btn:hover{background:#7a2336;text-decoration:none !important;transform:translateY(-1px);box-shadow:0 8px 24px rgba(96,28,43,0.35)}
+  .lux-tor .lt-btn-ghost{display:inline-block;background:transparent;color:#fff !important;border:1px solid rgba(255,255,255,0.35);font-family:var(--lt-sans);font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:17px 36px;text-decoration:none !important;transition:all .2s}
+  .lux-tor .lt-btn-ghost:hover{background:rgba(255,255,255,0.06);border-color:var(--lt-warm);color:var(--lt-warm) !important}
+  .lux-tor .lt-cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+  .lux-tor .lt-hero-meta{margin-top:14px;font-size:13px;color:rgba(255,255,255,0.62);line-height:1.85}
+  .lux-tor .lt-hero-meta strong{color:rgba(255,255,255,0.92)}
+  .lux-tor .lt-pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+  .lux-tor .lt-pill{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.72);font-weight:700;border:1px solid rgba(188,175,159,0.32);padding:8px 16px;border-radius:99px}
+
+  .lux-tor .lt-sticky{position:fixed;bottom:0;left:0;right:0;background:var(--lt-dark);color:#fff;padding:14px 20px;display:none;justify-content:space-between;align-items:center;gap:16px;z-index:9999;border-top:1px solid rgba(188,175,159,0.25);box-shadow:0 -6px 24px rgba(0,0,0,0.25)}
+  .lux-tor .lt-sticky-text{font-size:13px;color:rgba(255,255,255,0.88);line-height:1.4}
+  .lux-tor .lt-sticky-text strong{color:var(--lt-warm)}
+  .lux-tor .lt-sticky .lt-btn{padding:12px 22px;font-size:11px;letter-spacing:2px}
+  .lux-tor .lt-sticky.lt-visible{display:flex}
+  @media(max-width:640px){.lux-tor .lt-sticky-text{display:none}.lux-tor .lt-sticky{justify-content:center}}
+
+  .lux-tor .lt-exec{padding:60px 0;background:#fff}
+  .lux-tor .lt-qa{background:var(--lt-cream2);border-left:3px solid var(--lt-warm);padding:40px 44px}
+  .lux-tor .lt-qa-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--lt-warm);font-weight:700;margin-bottom:14px}
+  .lux-tor .lt-qa h2{font-size:24px;margin-bottom:16px;color:var(--lt-dark);font-weight:600}
+  .lux-tor .lt-qa p{font-size:15px;line-height:1.8;color:var(--lt-text)}
+  .lux-tor .lt-qa-facts{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;margin-top:24px;padding-top:24px;border-top:1px solid rgba(0,0,0,0.08)}
+  .lux-tor .lt-qa-fact{font-size:13px;line-height:1.6}
+  .lux-tor .lt-qa-fact strong{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--lt-warm);font-weight:700;margin-bottom:4px}
+  @media(max-width:640px){.lux-tor .lt-qa-facts{grid-template-columns:1fr}.lux-tor .lt-qa{padding:28px}}
+
+  .lux-tor .lt-stat{background:var(--lt-cream);padding:34px 0;border-top:1px solid #d0cbc4;border-bottom:1px solid #d0cbc4}
+  .lux-tor .lt-stat .lt-wrap{display:flex;justify-content:center;align-items:stretch;gap:0;flex-wrap:wrap}
+  .lux-tor .lt-stat-item{text-align:center;padding:0 32px;border-right:1px solid #d0cbc4}
+  .lux-tor .lt-stat-item:last-child{border-right:none}
+  .lux-tor .lt-stat-num{font-family:var(--lt-serif);font-size:32px;color:var(--lt-red);font-weight:600;line-height:1}
+  .lux-tor .lt-stat-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--lt-dark);font-weight:700;margin-top:8px}
+  @media(max-width:640px){.lux-tor .lt-stat-item{border-right:none;border-bottom:1px solid #d0cbc4;padding:14px 16px;width:100%}.lux-tor .lt-stat-item:last-child{border-bottom:none}}
+
+  .lux-tor .lt-sec{padding:78px 0}
+  .lux-tor .lt-sec-alt{background:var(--lt-cream2);padding:78px 0}
+  .lux-tor .lt-sec-dark{background:var(--lt-dark);padding:78px 0}
+  .lux-tor .lt-sec h2,.lux-tor .lt-sec-alt h2{font-size:clamp(26px,3.4vw,36px);margin-bottom:18px;color:var(--lt-dark)}
+  .lux-tor .lt-sec-dark h2{color:#fff}
+  .lux-tor .lt-lead{font-size:17px;color:var(--lt-text2);margin-bottom:30px;line-height:1.85;max-width:820px}
+  .lux-tor .lt-rule{width:56px;height:2px;background:var(--lt-warm);margin:0 0 24px}
+
+  .lux-tor .lt-mid{background:linear-gradient(135deg,var(--lt-cream) 0%,#efe9e2 100%);padding:46px 0;text-align:center;border-top:1px solid #d0cbc4;border-bottom:1px solid #d0cbc4}
+  .lux-tor .lt-mid h3{font-family:var(--lt-serif);font-size:24px;color:var(--lt-dark);margin-bottom:10px;font-weight:600}
+  .lux-tor .lt-mid p{font-size:15px;color:var(--lt-text);margin-bottom:22px;max-width:600px;margin-left:auto;margin-right:auto}
+
+  .lux-tor .lt-districts{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:32px}
+  .lux-tor .lt-dc{background:#fff;border:1px solid #ddd8d0;padding:30px;position:relative;transition:border-color .2s,box-shadow .2s}
+  .lux-tor .lt-dc:hover{border-color:var(--lt-warm);box-shadow:0 8px 24px rgba(0,0,0,0.04)}
+  .lux-tor .lt-dc.lt-feature{background:var(--lt-dark);border-color:var(--lt-dark)}
+  .lux-tor .lt-dc.lt-feature h3,.lux-tor .lt-dc.lt-feature p{color:#fff}
+  .lux-tor .lt-dc.lt-feature .lt-loc{color:var(--lt-warm)}
+  .lux-tor .lt-dc.lt-feature p{color:rgba(255,255,255,0.82)}
+  .lux-tor .lt-dc.lt-feature .lt-badge{background:var(--lt-warm);color:var(--lt-dark)}
+  .lux-tor .lt-dc.lt-feature p a{color:#fff}
+  .lux-tor .lt-badge{display:inline-block;font-size:9px;letter-spacing:2px;text-transform:uppercase;background:var(--lt-red);color:#fff;padding:4px 10px;font-weight:700;margin-bottom:14px}
+  .lux-tor .lt-loc{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--lt-warm);font-weight:700;margin-bottom:8px;display:block}
+  .lux-tor .lt-dc h3{font-size:21px;color:var(--lt-dark);margin-bottom:12px;font-weight:600}
+  .lux-tor .lt-dc p{font-size:14px;line-height:1.8}
+  .lux-tor .lt-dc p a{color:inherit;text-decoration:underline}
+
+  .lux-tor .lt-table{width:100%;border-collapse:collapse;font-size:13px;margin:0;background:#fff;min-width:640px}
+  .lux-tor .lt-table th{background:var(--lt-dark);color:#fff;font-family:var(--lt-sans);font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:14px 16px;text-align:left;vertical-align:top}
+  .lux-tor .lt-table th:last-child{background:var(--lt-red)}
+  .lux-tor .lt-table td{padding:14px 16px;border-bottom:1px solid #e0dbd4;color:var(--lt-text);font-weight:400;line-height:1.6;vertical-align:top}
+  .lux-tor .lt-table tr:last-child td{border-bottom:none}
+  .lux-tor .lt-table tr:nth-child(even) td{background:#faf9f7}
+  .lux-tor .lt-table td:first-child{font-weight:700;color:var(--lt-dark)}
+  .lux-tor .lt-table td:last-child{background:#fdf6f4 !important}
+  .lux-tor .lt-twrap{overflow-x:auto;margin:28px 0;-webkit-overflow-scrolling:touch}
+
+  .lux-tor .lt-savings{background:var(--lt-dark);color:#fff;padding:18px 24px;margin-top:24px;text-align:center;border-left:4px solid var(--lt-warm);font-size:14px;line-height:1.6}
+  .lux-tor .lt-savings strong{color:var(--lt-warm);font-family:var(--lt-serif);font-size:18px;font-weight:600}
+
+  .lux-tor .lt-callout{background:var(--lt-cream2);border-left:3px solid var(--lt-warm);padding:24px 28px;margin:28px 0}
+  .lux-tor .lt-callout-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--lt-warm);font-weight:700;margin-bottom:10px}
+  .lux-tor .lt-callout p{font-size:14px;color:var(--lt-text);margin:0;line-height:1.85}
+
+  .lux-tor .lt-founder{background:#fff;border:1px solid var(--lt-cream);padding:30px 32px;margin-top:32px;display:grid;grid-template-columns:80px 1fr;gap:24px;align-items:start}
+  .lux-tor .lt-fp{width:80px;height:80px;border-radius:50%;background:var(--lt-dark);color:var(--lt-warm);display:flex;align-items:center;justify-content:center;font-family:var(--lt-serif);font-size:26px;font-weight:600}
+  .lux-tor .lt-fn{font-family:var(--lt-serif);font-size:18px;color:var(--lt-dark);font-weight:600;margin-bottom:2px}
+  .lux-tor .lt-ft{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--lt-warm);font-weight:700;margin-bottom:12px;display:block}
+  .lux-tor .lt-founder p{font-size:14px;line-height:1.8;color:var(--lt-text);margin:0}
+  @media(max-width:640px){.lux-tor .lt-founder{grid-template-columns:1fr;text-align:center}.lux-tor .lt-fp{margin:0 auto}}
+
+  .lux-tor .lt-how{margin-top:40px}
+  .lux-tor .lt-hr{display:grid;grid-template-columns:72px 1fr;align-items:stretch}
+  .lux-tor .lt-hl{display:flex;flex-direction:column;align-items:center}
+  .lux-tor .lt-hc{width:52px;height:52px;border:1px solid var(--lt-warm);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--lt-serif);font-size:20px;color:var(--lt-warm);background:var(--lt-dark);flex-shrink:0;z-index:1}
+  .lux-tor .lt-hcon{width:1px;flex:1;background:rgba(188,175,159,0.22)}
+  .lux-tor .lt-hr:last-child .lt-hcon{display:none}
+  .lux-tor .lt-hb{padding:0 0 44px 28px}
+  .lux-tor .lt-htag{display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--lt-warm);font-weight:700;margin-bottom:10px;padding-top:8px}
+  .lux-tor .lt-hb h3{font-family:var(--lt-serif);font-size:22px;color:#fff;margin-bottom:14px;font-weight:400}
+  .lux-tor .lt-hb p{font-size:15px;color:rgba(255,255,255,0.82);line-height:1.85;margin-bottom:10px}
+
+  .lux-tor .lt-faq{margin-top:32px}
+  .lux-tor .lt-fi{border-bottom:1px solid #ddd8d0}
+  .lux-tor .lt-fi:first-child{border-top:1px solid #ddd8d0}
+  .lux-tor .lt-fq{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-family:var(--lt-serif);font-size:18px;color:var(--lt-dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:400;line-height:1.35}
+  .lux-tor .lt-fq:hover{color:var(--lt-red)}
+  .lux-tor .lt-fa-arrow{font-size:18px;color:var(--lt-warm);flex-shrink:0;transition:transform .3s}
+  .lux-tor .lt-fa{font-size:15px;color:var(--lt-text);line-height:1.85;padding-bottom:22px;display:none}
+  .lux-tor .lt-fi.lt-open .lt-fa{display:block}
+  .lux-tor .lt-fi.lt-open .lt-fa-arrow{transform:rotate(180deg)}
+
+  .lux-tor .lt-related{padding:60px 0;background:var(--lt-cream2);border-top:1px solid var(--lt-cream)}
+  .lux-tor .lt-related h3{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--lt-warm);font-weight:700;margin-bottom:22px;font-family:var(--lt-sans)}
+  .lux-tor .lt-rg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .lux-tor .lt-rl{display:block;background:#fff;border:1px solid var(--lt-cream);padding:18px 22px;font-size:14px;color:var(--lt-dark) !important;font-weight:700;transition:all .2s;text-decoration:none !important}
+  .lux-tor .lt-rl:hover{border-color:var(--lt-warm);color:var(--lt-red) !important;transform:translateY(-2px)}
+  .lux-tor .lt-rl::after{content:' \2192';color:var(--lt-warm)}
+  @media(max-width:640px){.lux-tor .lt-rg{grid-template-columns:1fr}}
+
+  .lux-tor .lt-final{background:var(--lt-dark);padding:100px 0;text-align:center;position:relative;overflow:hidden}
+  .lux-tor .lt-final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(188,175,159,0.10),transparent 65%);pointer-events:none}
+  .lux-tor .lt-fi-in{position:relative;z-index:1}
+  .lux-tor .lt-final h2{color:#fff;font-size:clamp(28px,3.6vw,42px);max-width:640px;margin:0 auto 16px}
+  .lux-tor .lt-final p{color:rgba(255,255,255,0.82);font-size:17px;margin-bottom:34px;max-width:560px;margin-left:auto;margin-right:auto}
+  .lux-tor .lt-final-meta{font-size:13px;color:rgba(255,255,255,0.55);margin-top:24px;line-height:1.9}
+  .lux-tor .lt-final-meta strong{color:rgba(255,255,255,0.85)}
+
+  @media(max-width:760px){.lux-tor .lt-districts{grid-template-columns:1fr}}
+  @media(max-width:640px){
+    .lux-tor .lt-hr{grid-template-columns:56px 1fr}
+    .lux-tor .lt-wrap,.lux-tor .lt-wrap-n{padding:0 20px}
+    .lux-tor .lt-hero{padding:70px 0 60px}
+  }
+</style>
+
+<div class="lux-tor">
+
+  <div class="lt-topbar">
+    Toronto <span>&middot;</span> GTA <span>&middot;</span> Mississauga <span>&middot;</span> Brampton <span>&middot;</span> Free Virtual Consultation
+  </div>
+
+  <section class="lt-hero">
+    <div class="lt-wrap lt-hero-inner">
+      <div class="lt-eyebrow">Lux Jewels &middot; Custom Diamond Jewelry</div>
+      <h1>Engagement Rings Toronto: <em>Custom Lab Grown &amp; Mined Diamond Rings</em></h1>
+      <p class="lt-hero-sub">Direct-to-designer pricing. No Toronto showroom markup. Free 30-40 minute virtual consultation with the first jeweler in Canada to offer lab grown diamond engagement rings.</p>
+      <div class="lt-cta-row">
+        <a href="/booking-appointment/" class="lt-btn">Book Your Free Consultation</a>
+        <a href="#lt-pricing" class="lt-btn-ghost">See Toronto Pricing</a>
+      </div>
+      <div class="lt-hero-meta">
+        Free &middot; 30-40 minutes &middot; Video call &middot; <strong>Ships overnight across the GTA</strong>
+      </div>
+      <div class="lt-pills">
+        <span class="lt-pill">First in Canada for Lab Grown (2015)</span>
+        <span class="lt-pill">Founded 2007 &middot; 20+ Years Experience</span>
+        <span class="lt-pill">GIA / IGI Certified</span>
+        <span class="lt-pill">Zero Commission Sellers</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="lt-exec">
+    <div class="lt-wrap-n">
+      <div class="lt-qa">
+        <div class="lt-qa-label">Executive Summary</div>
+        <h2>What Lux Jewels Offers Toronto Buyers</h2>
+        <p>Lux Jewels designs custom engagement rings for clients in Toronto, the GTA, and across Ontario. Founded in 2007 by Suman Smith, who became the first jeweler in Canada to offer lab grown diamond engagement rings in 2015. Over 20 years of diamond industry experience. Virtual consultations. GIA and IGI certified diamonds. Every ring designed from scratch and shipped FedEx Priority Overnight, insured, to your door.</p>
+        <div class="lt-qa-facts">
+          <div class="lt-qa-fact"><strong>Diamond Types</strong>Lab grown (Type IIa standard), Canadian mined (Diavik, Ekati), ethically sourced natural</div>
+          <div class="lt-qa-fact"><strong>Metals</strong>14K gold (yellow, white, rose), 18K gold, platinum. All repurposed gold.</div>
+          <div class="lt-qa-fact"><strong>Shapes</strong>Round brilliant, oval, cushion, emerald cut, pear, princess</div>
+          <div class="lt-qa-fact"><strong>Settings</strong>Solitaire, hidden halo, three-stone, bezel, pave</div>
+          <div class="lt-qa-fact"><strong>Consultation</strong>Free, 30-40 minutes, video call</div>
+          <div class="lt-qa-fact"><strong>Timeline</strong>4-5 weeks from deposit</div>
+          <div class="lt-qa-fact"><strong>Ontario Sales Tax</strong>13% HST</div>
+          <div class="lt-qa-fact"><strong>Last Updated</strong>May 2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lt-stat">
+    <div class="lt-wrap">
+      <div class="lt-stat-item"><div class="lt-stat-num">$5K&ndash;$25K</div><div class="lt-stat-label">Monthly Toronto Showroom Rent</div></div>
+      <div class="lt-stat-item"><div class="lt-stat-num">1.5ct</div><div class="lt-stat-label">Lux Jewels on $6,000</div></div>
+      <div class="lt-stat-item"><div class="lt-stat-num">0.8ct</div><div class="lt-stat-label">Spadina on $6,000</div></div>
+      <div class="lt-stat-item"><div class="lt-stat-num">0</div><div class="lt-stat-label">Commissioned Sellers</div></div>
+    </div>
+  </div>
+
+  <section class="lt-sec">
+    <div class="lt-wrap-n">
+      <div class="lt-rule"></div>
+      <h2>Toronto Is Canada's Largest Engagement Ring Market</h2>
+      <p>Toronto is Canada's largest engagement ring market. It's also where buyers lose the most money to retail markup. Yorkdale Mall, Yorkville Village, the Eaton Centre, Spadina Avenue's diamond district &mdash; these are expensive places to operate a business. A jeweler on Spadina pays anywhere from $5,000 to $15,000 per month in rent. Yorkville boutiques run higher. Every one of those dollars gets baked into the price tag on the ring in your hand. And that's before display case insurance, staff commissions, and the advertising spend to get you through the door.</p>
+
+      <div class="lt-founder">
+        <div class="lt-fp">SS</div>
+        <div>
+          <div class="lt-fn">Suman Smith</div>
+          <span class="lt-ft">Founder, Lux Jewels &middot; Vancouver &middot; Since 2007</span>
+          <p>I'm Suman Smith, founder of Lux Jewels, based in Vancouver. I've worked in the diamond industry for over 20 years. In 2015 I became the first jeweler in Canada to offer lab grown diamond engagement rings. I started Lux Jewels because I kept seeing the same problem: people getting misled, ending up with lower quality, and overpaying for rings that didn't match what they were promised. I don't carry inventory. I don't take commissions from diamond sellers. I don't push you toward a bigger stone because it pays me more. What I do is source your diamond directly, design your ring from scratch, and ship it insured to your door in Toronto, across Canada, or the United States.</p>
+        </div>
+      </div>
+
+      <p style="margin-top:32px">The average Toronto engagement ring buyer spends between $4,000 and $6,000 &mdash; above the national average of $3,500, partly because the city has more high-end retailers competing for your attention. But here's what those retailers won't tell you: on a $6,000 budget, the gap between buying from a Spadina district jeweler and buying direct from a designer can mean jumping from a 0.8-carat diamond to a 1.5-carat stone. Same grade. Same certification. Same sparkle. Very different number on the sticker.</p>
+    </div>
+  </section>
+
+  <div class="lt-mid">
+    <div class="lt-wrap-n">
+      <h3>Shopping for a ring in Toronto?</h3>
+      <p>Free consultation. 30-40 minutes. Video call. I'll walk you through what your budget actually gets you &mdash; without the Toronto retail markup.</p>
+      <a href="/booking-appointment/" class="lt-btn">Book Your Free Consultation</a>
+    </div>
+  </div>
+
+  <section class="lt-sec-alt">
+    <div class="lt-wrap">
+      <div class="lt-rule"></div>
+      <h2>Where Toronto Couples Actually Shop for Engagement Rings</h2>
+      <p class="lt-lead">Toronto gives you more options than any other city in Canada. That's both an advantage and a problem, because more options doesn't mean more transparency.</p>
+
+      <div class="lt-districts">
+        <div class="lt-dc">
+          <span class="lt-loc">Downtown West</span>
+          <h3>The Spadina Diamond District</h3>
+          <p>Spadina Avenue between Queen and Dundas has been Toronto's diamond hub for decades. Dozens of jewelers operate in a few blocks. The advantage is competition &mdash; you can compare stones and prices without driving across the city. The disadvantage is that many of these stores operate on commission-based sales, and the pressure to close a deal can override honest guidance. Some are excellent. Some will show you a lower-grade stone and call it something it isn't. Know what you're looking at before you walk in.</p>
+        </div>
+        <div class="lt-dc">
+          <span class="lt-loc">Midtown / Annex</span>
+          <h3>Yorkville and Bloor Street</h3>
+          <p>Birks at Bloor and Bay. Tiffany used to be here. High-end independent boutiques dot Cumberland Street. Yorkville carries premium pricing because Yorkville is a premium address. If you're spending $15,000 or more, you'll find exceptional pieces. Under $10,000, you're paying Yorkville rent on a mid-range diamond.</p>
+        </div>
+        <div class="lt-dc">
+          <span class="lt-loc">Across the GTA</span>
+          <h3>Independent Custom Jewelers</h3>
+          <p>Toronto has strong independents doing excellent custom work. Kimberfire operates from a studio near King West with 800+ five-star reviews and direct diamond sourcing. Engage Studio in the downtown core offers a full custom process with resin models before final production. Livia Diamonds near the diamond district specializes in lab grown. Alexis Gallery and Randor have decades of local reputation. These are real craftspeople, and for Toronto buyers who want in-person consultations, they're strong options.</p>
+        </div>
+        <div class="lt-dc lt-feature">
+          <span class="lt-badge">Recommended for Toronto buyers</span>
+          <span class="lt-loc">Virtual &middot; Nationwide</span>
+          <h3>Virtual and Direct Designers</h3>
+          <p>This is where Lux Jewels fits. No Toronto showroom rent. No inventory. No commissioned salespeople. Virtual consultation means a Toronto client gets the same direct-sourcing access and custom design process as someone in Vancouver, Montreal, or Calgary. The difference shows up in what your money buys. For how the custom process works step by step, see our <a href="/custom-engagement-rings-vancouver/">custom engagement rings Vancouver page</a>. The process is identical for Toronto clients.</p>
+        </div>
+      </div>
+
+      <div class="lt-twrap">
+        <table class="lt-table">
+          <thead>
+            <tr>
+              <th>Factor</th>
+              <th>Spadina District</th>
+              <th>Yorkville Boutique</th>
+              <th>Toronto Independent</th>
+              <th>Lux Jewels (Virtual)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Markup</td><td>2x - 3x</td><td>3x - 4x</td><td>1.5x - 2.5x</td><td>Minimal</td></tr>
+            <tr><td>Diamond source</td><td>Wholesale, varies</td><td>Pre-selected premium</td><td>Direct or wholesale</td><td>Sourced per client, GIA/IGI</td></tr>
+            <tr><td>Custom option</td><td>Some</td><td>Limited</td><td>Full custom</td><td>Every ring from scratch</td></tr>
+            <tr><td>Consultation</td><td>Walk-in + pressure</td><td>Appointment, formal</td><td>Appointment, personal</td><td>30-40 min video with Suman</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="lt-pricing" class="lt-sec">
+    <div class="lt-wrap">
+      <div class="lt-rule"></div>
+      <h2>Engagement Ring Pricing for Toronto Buyers (2026)</h2>
+      <p class="lt-lead">Forget the three months' salary rule &mdash; De Beers invented that in a 1930s ad campaign. Here's what each budget realistically gets you when buying direct versus walking into a Toronto store.</p>
+
+      <div class="lt-twrap">
+        <table class="lt-table">
+          <thead>
+            <tr>
+              <th>Budget (CAD)</th>
+              <th>Lab Grown at Lux Jewels</th>
+              <th>Mined at Lux Jewels</th>
+              <th>Same Budget at Toronto Chain</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>$2,000 - $4,000</td><td>1.0-1.8 ct, Excellent cut, G-H, VS1-VS2, 14K solitaire</td><td>0.5-0.7 ct, similar grades</td><td>0.4-0.6 ct lab OR 0.3-0.4 ct mined</td></tr>
+            <tr><td>$4,000 - $8,000</td><td>1.5-3.0 ct, D-G color, VVS-VS, hidden halo or pave</td><td>0.8-1.2 ct, GIA certified</td><td>0.7-1.0 ct lab OR 0.5-0.7 ct mined</td></tr>
+            <tr><td>$8,000 - $15,000</td><td>2.5-5.0 ct, collector-grade possible</td><td>1.2-2.0 ct, GIA Excellent</td><td>1.5-2.5 ct lab OR 0.8-1.2 ct mined</td></tr>
+            <tr><td>$15,000+</td><td>Statement pieces, matched pairs</td><td>2.0+ ct, premium certified</td><td>Varies widely</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="lt-savings">
+        On a $6,000 Toronto budget, that's the difference between a <strong>1.5ct lab grown at Lux Jewels</strong> and a <strong>0.8ct lab grown on Spadina</strong>. Same certification. Same sparkle.
+      </div>
+
+      <p style="margin-top:20px">All diamonds certified by GIA or IGI. These ranges reflect real Lux Jewels project pricing. The free consultation gives you a specific estimate.</p>
+
+      <div class="lt-callout">
+        <div class="lt-callout-label">A note on pricing</div>
+        <p>Pricing varies based on diamond availability, gold and platinum spot prices, and design complexity. All figures approximate.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="lt-sec-alt">
+    <div class="lt-wrap">
+      <div class="lt-rule"></div>
+      <h2>Popular Engagement Ring Styles in Toronto</h2>
+      <p class="lt-lead">Toronto couples tend to lean slightly more classic than Vancouver. Round brilliants and cushion cuts dominate here, though ovals are gaining fast. Here's what I'm seeing from Toronto clients right now.</p>
+
+      <div class="lt-twrap">
+        <table class="lt-table">
+          <thead>
+            <tr><th>Shape / Style</th><th>Why Toronto Clients Choose It</th><th>Best For</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Round Brilliant</td><td>Maximum sparkle. 57/58 facets. The classic that never dates.</td><td>Traditional taste, highest light performance</td></tr>
+            <tr><td>Oval</td><td>Elongates the finger, faces up larger per carat. Rising fast in Toronto.</td><td>Visible size on budget, modern classic</td></tr>
+            <tr><td>Cushion Cut</td><td>Soft edges, vintage feel, strong fire and scintillation.</td><td>Toronto's vintage architecture lovers</td></tr>
+            <tr><td>Emerald Cut</td><td>Step facets, architectural, hall-of-mirrors effect.</td><td>Confident, minimalist style</td></tr>
+            <tr><td>Pear</td><td>Teardrop, unique, elongating.</td><td>Statement pieces, solitaire pendants too</td></tr>
+            <tr><td>Princess Cut</td><td>Square shape, brilliant faceting, geometric.</td><td>Contemporary, modern design</td></tr>
+            <tr><td>Hidden Halo</td><td>Clean from top, sparkle from the side.</td><td>Modern couples who want understated brilliance</td></tr>
+            <tr><td>Bezel Setting</td><td>Metal wraps the diamond. Snag-proof.</td><td>TTC commuters, active lifestyles, healthcare workers</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="lt-callout">
+        <div class="lt-callout-label">Something I tell every Toronto client</div>
+        <p>The best ring for daily wear in a city where you're grabbing subway handles and pulling on winter gloves isn't always the most delicate setting. A bezel or flush mount holds up better through a Toronto winter than a high-prong cathedral. Function first, then beauty.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="lt-sec">
+    <div class="lt-wrap-n">
+      <div class="lt-rule"></div>
+      <h2>Lab Grown vs Mined Diamonds for Toronto Buyers</h2>
+      <p>Toronto has embraced lab grown diamonds faster than most Canadian cities. Local jewelers report that roughly 7 in 10 couples now choose lab grown, driven primarily by the size and quality advantage at every budget.</p>
+      <p>Lab grown diamonds cost a fraction of what mined diamonds cost at identical cut, color, clarity, and carat weight. Same crystal structure. Same 10 on the Mohs hardness scale. The FTC confirmed in 2018 that lab grown stones are real diamonds. They're created via CVD or HPHT process in controlled environments.</p>
+      <p>Canada's Diavik and Ekati mines in the Northwest Territories produce some of the world's most traceable diamonds. If supporting Canadian mining communities matters to you, mined is a strong choice with genuine provenance.</p>
+      <p>I work with both. I don't push one over the other. For the full comparison, read our <a href="/lab-diamonds-vs-natural/">lab grown vs natural diamonds page</a>.</p>
+    </div>
+  </section>
+
+  <div class="lt-mid">
+    <div class="lt-wrap-n">
+      <h3>Got a quote from a Toronto jeweler that feels high?</h3>
+      <p>Book a free consultation. I'll help you understand if you're getting fair value for what's being offered. Honest advice &mdash; I'm on your side whether you buy from me or not.</p>
+      <a href="/booking-appointment/" class="lt-btn">Book Your Free Consultation</a>
+    </div>
+  </div>
+
+  <section class="lt-sec">
+    <div class="lt-wrap-n">
+      <div class="lt-rule"></div>
+      <h2>Ontario HST on Engagement Rings</h2>
+      <p>Ontario charges 13% HST on jewelry purchases. On a $5,000 ring, that's $650 in tax. On a $10,000 ring, $1,300. There's no way around it &mdash; HST applies whether you buy in-store on Spadina or online from a seller anywhere in Canada.</p>
+      <p>For perspective, Ontario's 13% is mid-range nationally. Alberta buyers pay only 5% GST. Quebec hits 14.975%. For a full provincial comparison, see our <a href="/engagement-rings-canada/">engagement rings Canada page</a>.</p>
+    </div>
+  </section>
+
+  <section class="lt-sec-dark">
+    <div class="lt-wrap-n">
+      <div class="lt-rule"></div>
+      <h2 style="color:#fff;margin-bottom:8px">How It Works for Toronto Clients</h2>
+      <p style="color:rgba(255,255,255,0.62);font-size:16px;margin-bottom:0">The process is the same whether you're in the Annex, Scarborough, Mississauga, or Brampton.</p>
+
+      <div class="lt-how">
+        <div class="lt-hr">
+          <div class="lt-hl"><div class="lt-hc">1</div><div class="lt-hcon"></div></div>
+          <div class="lt-hb">
+            <span class="lt-htag">Step 01</span>
+            <h3>Free Virtual Consultation</h3>
+            <p>Share inspiration images before our call. During the free consultation, I walk through what's realistic at your budget, show diamond options, and discuss setting styles.</p>
+          </div>
+        </div>
+        <div class="lt-hr">
+          <div class="lt-hl"><div class="lt-hc">2</div><div class="lt-hcon"></div></div>
+          <div class="lt-hb">
+            <span class="lt-htag">Step 02</span>
+            <h3>Diamond Sourcing and Approval</h3>
+            <p>After we agree on direction, I source your diamond &mdash; whether that's a lab grown oval or a Canadian-mined round brilliant &mdash; and send you video and full GIA or IGI certificate. You approve the stone before anything gets made.</p>
+          </div>
+        </div>
+        <div class="lt-hr">
+          <div class="lt-hl"><div class="lt-hc">3</div><div class="lt-hcon"></div></div>
+          <div class="lt-hb">
+            <span class="lt-htag">Step 03</span>
+            <h3>CAD Rendering</h3>
+            <p>Then the ring goes into CAD rendering. One design revision is included. Most clients don't need any.</p>
+          </div>
+        </div>
+        <div class="lt-hr">
+          <div class="lt-hl"><div class="lt-hc">4</div><div class="lt-hcon"></div></div>
+          <div class="lt-hb">
+            <span class="lt-htag">Step 04</span>
+            <h3>Production and Overnight Delivery</h3>
+            <p>Production takes 4-5 weeks from deposit. You get progress updates as needed. The finished ring ships FedEx Priority Overnight, insured, signature required. Next day delivery is typical for GTA addresses.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lt-sec">
+    <div class="lt-wrap">
+      <div class="lt-rule"></div>
+      <h2>What Lux Jewels Offers Toronto Clients</h2>
+
+      <div class="lt-twrap">
+        <table class="lt-table">
+          <thead>
+            <tr><th>Service</th><th>Details</th><th>How to Start</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Custom Engagement Rings</td><td>Built from scratch. Choose shape (round, oval, cushion, emerald, pear, princess), setting, metal. One revision included.</td><td>Free consultation at <a href="/booking-appointment/">/booking-appointment/</a></td></tr>
+            <tr><td>Custom Wedding Bands</td><td>Matching or standalone. Same custom process.</td><td>Free consultation</td></tr>
+            <tr><td>Diamond Earrings and Pendants</td><td>Martini studs, halo drops, bezel set. Lab grown or mined.</td><td>Free consultation</td></tr>
+            <tr><td>Heirloom Jewelry Redesign</td><td>Your family diamond in a new setting. We keep the story, update the design.</td><td>Free consultation</td></tr>
+            <tr><td>The No-BS Diamond Buying Call</td><td>Shopping at a Toronto jeweler? Get independent expert guidance. I review stones and certificates from any seller.</td><td>Book at <a href="https://stan.store/luxjewels" target="_blank" rel="noopener">stan.store/luxjewels</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="lt-callout">
+        <div class="lt-callout-label">Two services, two booking links</div>
+        <p>The No-BS Diamond Buying Call ($199, 30 minutes, video call) is a separate service from the free jewelry consultation. The first and only service of its kind in the world. Pricing subject to change. Confirm current rate at <a href="https://stan.store/luxjewels" target="_blank" rel="noopener">stan.store/luxjewels</a> before booking. The free consultation (30-40 minutes at <a href="/booking-appointment/">/booking-appointment/</a>) is your starting point for custom Lux Jewels projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="lt-sec-alt">
+    <div class="lt-wrap-n">
+      <div class="lt-rule"></div>
+      <h2>Frequently Asked Questions for Toronto Buyers</h2>
+      <div class="lt-faq">
+        <div class="lt-fi">
+          <button class="lt-fq" type="button">Does Lux Jewels have a Toronto showroom?<span class="lt-fa-arrow">&#9660;</span></button>
+          <div class="lt-fa">No. Lux Jewels operates virtually. That's intentional &mdash; showroom rent in Toronto runs $5,000 to $25,000 per month depending on location. That overhead goes directly onto ring prices. Without it, your entire budget goes into your diamond and your ring.</div>
+        </div>
+        <div class="lt-fi">
+          <button class="lt-fq" type="button">How much do engagement rings cost in Toronto?<span class="lt-fa-arrow">&#9660;</span></button>
+          <div class="lt-fa">Toronto buyers typically spend $4,000 to $6,000. Custom rings from Lux Jewels start at approximately $2,000 for a lab grown diamond in a 14K gold solitaire. There's no minimum.</div>
+        </div>
+        <div class="lt-fi">
+          <button class="lt-fq" type="button">Can I see my diamond before the ring is made?<span class="lt-fa-arrow">&#9660;</span></button>
+          <div class="lt-fa">Yes. You get video of the actual diamond plus full GIA or IGI certificate before approving. Nothing gets made until you say go.</div>
+        </div>
+        <div class="lt-fi">
+          <button class="lt-fq" type="button">How long does a custom ring take?<span class="lt-fa-arrow">&#9660;</span></button>
+          <div class="lt-fa">4-5 weeks from deposit. Includes diamond sourcing, CAD design, one revision if needed, and production.</div>
+        </div>
+        <div class="lt-fi">
+          <button class="lt-fq" type="button">Do you offer both lab grown and mined diamonds?<span class="lt-fa-arrow">&#9660;</span></button>
+          <div class="lt-fa">Both. Lab grown diamonds (CVD or HPHT process) and ethically sourced natural diamonds, including Canadian-mined stones from Diavik and Ekati. Lux Jewels has offered both since 2015. We'll discuss what makes sense during the free consultation.</div>
+        </div>
+        <div class="lt-fi">
+          <button class="lt-fq" type="button">What's the sales tax on a ring in Ontario?<span class="lt-fa-arrow">&#9660;</span></button>
+          <div class="lt-fa">13% HST. On a $5,000 ring, that's $650. Applies whether you buy in-store or online, based on delivery address.</div>
+        </div>
+        <div class="lt-fi">
+          <button class="lt-fq" type="button">Do you ship to Mississauga, Brampton, and the rest of the GTA?<span class="lt-fa-arrow">&#9660;</span></button>
+          <div class="lt-fa">Yes. FedEx Priority Overnight, insured, signature required. Next day delivery is typical anywhere in the Greater Toronto Area. I also ship across all Canadian provinces and to the United States.</div>
+        </div>
+        <div class="lt-fi">
+          <button class="lt-fq" type="button">What's the difference between the free consultation and the No-BS Diamond Buying Call?<span class="lt-fa-arrow">&#9660;</span></button>
+          <div class="lt-fa">The free consultation (30-40 minutes, <a href="/booking-appointment/">/booking-appointment/</a>) is for clients starting a custom Lux Jewels project. The No-BS Diamond Buying Call ($199, 30 minutes, <a href="https://stan.store/luxjewels" target="_blank" rel="noopener">stan.store/luxjewels</a>) is for anyone shopping at any jeweler who wants independent expert guidance. The first and only service of its kind in the world. Pricing subject to change. Confirm current rate at stan.store/luxjewels before booking.</div>
+        </div>
+        <div class="lt-fi">
+          <button class="lt-fq" type="button">What metals do you work with?<span class="lt-fa-arrow">&#9660;</span></button>
+          <div class="lt-fa">14K gold in yellow, white, and rose. 18K gold. Platinum. All gold used is repurposed gold.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lt-final">
+    <div class="lt-wrap lt-fi-in">
+      <h2>Ready to Start Your Ring?</h2>
+      <p>Book a free consultation. 30-40 minutes, video call. Tell me what you're looking for, your budget, your timeline. Honest advice, no Toronto retail markup, no obligation.</p>
+      <a href="/booking-appointment/" class="lt-btn">Book Your Free Consultation</a>
+      <div class="lt-final-meta">
+        <strong>Free &middot; 30-40 minutes &middot; Video call</strong><br>
+        Serving Toronto, the GTA, all of Ontario, and across Canada and the US.
+      </div>
+    </div>
+  </section>
+
+  <section class="lt-related">
+    <div class="lt-wrap">
+      <h3>Related Pages</h3>
+      <div class="lt-rg">
+        <a class="lt-rl" href="/engagement-rings-canada/">Engagement Rings Canada: Custom Diamond Rings</a>
+        <a class="lt-rl" href="/engagement-rings-vancouver/">Engagement Rings Vancouver</a>
+        <a class="lt-rl" href="/custom-engagement-rings-vancouver/">Custom Engagement Rings Vancouver</a>
+        <a class="lt-rl" href="/lab-grown-engagement-rings/">Lab Grown Diamond Engagement Rings: Buyer's Guide</a>
+        <a class="lt-rl" href="/lab-diamonds-vs-natural/">Lab Grown vs Natural Diamonds: The Honest Comparison</a>
+        <a class="lt-rl" href="/no-bs-diamond-buying-call/">The No-BS Diamond Buying Call</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="lt-sticky" id="lt-stickyCta">
+    <div class="lt-sticky-text"><strong>Free Toronto Consultation</strong> &middot; 30-40 min video call &middot; No obligation</div>
+    <a href="/booking-appointment/" class="lt-btn">Book Now</a>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var root=document.querySelector('.lux-tor');
+  if(!root) return;
+  root.querySelectorAll('.lt-fq').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      var item=btn.closest('.lt-fi');
+      var isOpen=item.classList.contains('lt-open');
+      root.querySelectorAll('.lt-fi').forEach(function(i){i.classList.remove('lt-open');});
+      if(!isOpen){item.classList.add('lt-open');}
+    });
+  });
+  var sticky=document.getElementById('lt-stickyCta');
+  if(sticky){
+    window.addEventListener('scroll',function(){
+      if(window.scrollY>700 && window.scrollY < document.body.scrollHeight - window.innerHeight - 400){
+        sticky.classList.add('lt-visible');
+      } else {
+        sticky.classList.remove('lt-visible');
+      }
+    });
+  }
+})();
+</script>
